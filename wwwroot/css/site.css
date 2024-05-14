@@ -1,0 +1,62 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/*html {
+  position: relative;
+  min-height: 100%;
+}*/
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif; /* Alterado para uma fonte mais comum */
+}
+
+.cadastro-container-login {
+    text-align: center;
+    width: 400px; /* Reduzi o tamanho para se ajustar melhor em telas menores */
+    padding: 60px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+    .cadastro-container-login h1 {
+        font-size: 36px; /* Aumenta o tamanho da fonte do título */
+        margin-bottom: 20px; /* Adiciona espaço inferior ao título */
+    }
+
+.cadastro-form-login input[type="text"],
+.cadastro-form-login input[type="password"],
+#btnCadastrar {
+    width: calc(100% - 20px);
+    padding: 12px; /* Aumenta o preenchimento interno dos inputs */
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    font-size: 18px; /* Aumenta o tamanho da fonte dos inputs */
+}
+
+#btnCadastrar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+    #btnCadastrar:hover {
+        background-color: #45a049;
+    }

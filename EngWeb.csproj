@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\style.css" />
+    <Content Remove="wwwroot\css\styleHome.css" />
+    <Content Remove="wwwroot\Imagem\Automação 2.jpg" />
+    <Content Remove="wwwroot\Imagem\Automação 3.jpg" />
+    <Content Remove="wwwroot\Imagem\Automação 4.jpg" />
+    <Content Remove="wwwroot\Imagem\Automação 5.png" />
+    <Content Remove="wwwroot\Imagem\Automação.png" />
+    <Content Remove="wwwroot\Imagem\Autor.png" />
+    <Content Remove="wwwroot\Imagem\Civil 2.jpeg" />
+    <Content Remove="wwwroot\Imagem\Civil 3.jpeg" />
+    <Content Remove="wwwroot\Imagem\Civil.jpg" />
+    <Content Remove="wwwroot\Imagem\Civil.png" />
+    <Content Remove="wwwroot\Imagem\computacao 1.jpg" />
+    <Content Remove="wwwroot\Imagem\computacao 2.jpg" />
+    <Content Remove="wwwroot\Imagem\Computacao.jpg" />
+    <Content Remove="wwwroot\Imagem\Eng. Civil.jpg" />
+    <Content Remove="wwwroot\Imagem\Eng. Computação.png" />
+    <Content Remove="wwwroot\Imagem\Eng. Mecanica.jpg" />
+    <Content Remove="wwwroot\Imagem\Home.jpg" />
+    <Content Remove="wwwroot\Imagem\Home1.jpg" />
+    <Content Remove="wwwroot\Imagem\Logo.png" />
+    <Content Remove="wwwroot\Imagem\Mecanica 0.jpg" />
+    <Content Remove="wwwroot\Imagem\mecanica 1.jpeg" />
+    <Content Remove="wwwroot\Imagem\mecanica 2.jpg" />
+    <Content Remove="wwwroot\Imagem\Mecanica.jpeg" />
+    <Content Remove="wwwroot\Pages\Automacao.html" />
+    <Content Remove="wwwroot\Pages\Civil.html" />
+    <Content Remove="wwwroot\Pages\Computacao.html" />
+    <Content Remove="wwwroot\Pages\Login.html" />
+    <Content Remove="wwwroot\Pages\Mecanica.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\css\styleHome.css" />
+    <None Include="wwwroot\Imagem\Automação 2.jpg" />
+    <None Include="wwwroot\Imagem\Automação 3.jpg" />
+    <None Include="wwwroot\Imagem\Automação 4.jpg" />
+    <None Include="wwwroot\Imagem\Automação 5.png" />
+    <None Include="wwwroot\Imagem\Automação.png" />
+    <None Include="wwwroot\Imagem\Autor.png" />
+    <None Include="wwwroot\Imagem\Civil 2.jpeg" />
+    <None Include="wwwroot\Imagem\Civil 3.jpeg" />
+    <None Include="wwwroot\Imagem\Civil.jpg" />
+    <None Include="wwwroot\Imagem\Civil.png" />
+    <None Include="wwwroot\Imagem\computacao 1.jpg" />
+    <None Include="wwwroot\Imagem\computacao 2.jpg" />
+    <None Include="wwwroot\Imagem\Computacao.jpg" />
+    <None Include="wwwroot\Imagem\Eng. Civil.jpg" />
+    <None Include="wwwroot\Imagem\Eng. Computação.png" />
+    <None Include="wwwroot\Imagem\Eng. Mecanica.jpg" />
+    <None Include="wwwroot\Imagem\Home.jpg" />
+    <None Include="wwwroot\Imagem\Home1.jpg" />
+    <None Include="wwwroot\Imagem\Logo.png" />
+    <None Include="wwwroot\Imagem\Mecanica 0.jpg" />
+    <None Include="wwwroot\Imagem\mecanica 1.jpeg" />
+    <None Include="wwwroot\Imagem\mecanica 2.jpg" />
+    <None Include="wwwroot\Imagem\Mecanica.jpeg" />
+    <None Include="wwwroot\Pages\Automacao.html" />
+    <None Include="wwwroot\Pages\Civil.html" />
+    <None Include="wwwroot\Pages\Computacao.html" />
+    <None Include="wwwroot\Pages\Login.html" />
+    <None Include="wwwroot\Pages\Mecanica.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

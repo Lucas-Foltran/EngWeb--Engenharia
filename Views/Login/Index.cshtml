@@ -1,0 +1,105 @@
+﻿@{
+    Layout = null; // Define que essa página não irá utilizar um layout compartilhado
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar container">
+            <div class="logo"><h1>EngWeb</h1></div>
+            <ul class="nav-list">
+                <li><a href="http://localhost:5268">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Áreas <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="http://localhost:5268/Pages/Civil.html">Civil</a>
+                        <a href="http://localhost:5268/Pages/Computacao.html">Computação</a>
+                        <a href="http://localhost:5268/Pages/Mecanica.html">Mecânica</a>
+                    </div>
+                </li>
+                <li><a href="http://localhost:5268/Login">Cadastro</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="cadastro-container-login">
+        <h1>Login</h1>
+        <br></br>
+        <form class="cadastro-form-login" asp-controller="Login" asp-action="Post" method="POST">
+            <input type="text" name="nome" id="nome" placeholder="Nome de usuário" required>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
+            <button type="button" id="btnCadastrar" onclick="Cadastrar()" style="background-color: #4CAF50; color: white; border: none; cursor: pointer; width: calc(100% - 20px);padding: 12px;">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function Cadastrar() {
+            $.ajax({
+                url: '@Url.Action("Cadastrar", "Login")',
+                type: "POST",
+                data: {
+                    user: $('#nome').val(),
+                    pwd: $('#senha').val()
+                },
+                success: function (result) {
+                    if (result === false) {
+                        alert('erro!');
+                    }
+                    else {
+                        alert('Login registrado com sucesso!');
+                        window.location = "http://localhost:5268/Pages/Questionario.html";
+                    }
+
+                }
+            });
+
+        }
+    </script>
+</body>
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif; /* Alterado para uma fonte mais comum */
+    }
+
+    .cadastro-container-login {
+        text-align: center;
+        width: 400px; /* Reduzi o tamanho para se ajustar melhor em telas menores */
+        padding: 60px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-top: 100px; /* Adicione uma margem superior maior */
+    }
+
+        .cadastro-container-login h1 {
+            font-size: 36px; /* Aumenta o tamanho da fonte do título */
+            margin-bottom: 20px; /* Adiciona espaço inferior ao título */
+        }
+
+    .cadastro-form-login input[type="text"],
+    .cadastro-form-login input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 12px; /* Aumenta o preenchimento interno dos inputs */
+        margin-bottom: 30px;
+        box-sizing: border-box;
+        font-size: 18px; /* Aumenta o tamanho da fonte dos inputs */
+    }
+
+</style>
+
+</html>

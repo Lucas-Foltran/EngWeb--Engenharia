@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Estilos adicionais */
+        form {
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+        }
+
+        input[type="radio"] {
+            transform: scale(1.5); /* Aumenta o tamanho dos radio buttons */
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: green; /* Cor de fundo verde */
+            color: white; /* Texto em branco */
+            border: none; /* Sem borda */
+            padding: 10px 20px; /* Espaçamento interno */
+            font-size: 16px; /* Tamanho da fonte */
+            cursor: pointer; /* Cursor ao passar o mouse */
+        }
+
+            button:hover {
+                background-color: darkgreen; /* Cor de fundo mais escura ao passar o mouse */
+            }
+
+        .p {
+            font-size: 1.9rem;
+            color: rgb(35, 26, 87);
+            height: auto;
+        }
+
+        #resultado {
+            display: none; /* Esconde o resultado por padrão */
+            margin-top: 20px; /* Adiciona margem superior para o resultado */
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid green; /* Green */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar container">
+            <div class="logo">
+                <h1>EngWeb</h1>
+            </div>
+            <ul class="nav-list">
+                <li><a href="http://localhost:5268">Home </a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Áreas <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="http://localhost:5268/Pages/Automacao.html">Automação</a>
+                        <a href="http://localhost:5268/Pages/Civil.html">Civil</a>
+                        <a href="http://localhost:5268/Pages/Computacao.html">Computação</a>
+                    </div>
+                </li>
+                <li><a href="http://localhost:5268/Login">Cadastro</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero-questionario">
+        </div>
+        <main>
+            <h1>Teste Vocacional EngWeb</h1>
+            <p class="p">Responda o questionário e descubra qual área recomendamos para você!</p>
+            <form id="questionario">
+                <br />
+                <p>1. Qual sua habilidade preferida?</p>
+                <label><input type="radio" name="habilidade" value="analise">Análise</label>
+                <label><input type="radio" name="habilidade" value="criatividade">Criatividade</label>
+                <label><input type="radio" name="habilidade" value="trabalho-manual">Trabalho manual</label>
+
+                <br />
+
+                <p>2. O que você mais gosta de fazer?</p>
+                <label><input type="radio" name="gosto" value="resolver-problemas">Resolver problemas</label>
+                <label><input type="radio" name="gosto" value="inovar">Inovar</label>
+                <label><input type="radio" name="gosto" value="construir">Construir</label>
+
+                <br />
+
+                <p>3. Qual área você se interessa mais?</p>
+                <label><input type="radio" name="area" value="computacao">Computação</label>
+                <label><input type="radio" name="area" value="mecanica">Mecânica</label>
+                <label><input type="radio" name="area" value="civil">Civil</label>
+
+                <br />
+
+                <p>4. Como você descreveria seu interesse por tecnologia?</p>
+                <label><input type="radio" name="tecnologia" value="apaixonado">Apaixonado</label>
+                <label><input type="radio" name="tecnologia" value="interessado">Interessado</label>
+                <label><input type="radio" name="tecnologia" value="indiferente">Indiferente</label>
+
+                <br />
+
+                <p>5. Você se sente confortável lidando com máquinas e equipamentos?</p>
+                <label><input type="radio" name="maquinas" value="sim">Sim, muito</label>
+                <label><input type="radio" name="maquinas" value="as-vezes">Às vezes</label>
+                <label><input type="radio" name="maquinas" value="não">Não, prefiro não</label>
+
+                <br />
+
+                <p>6. Qual a sua opinião sobre trabalhar em equipe?</p>
+                <label><input type="radio" name="equipe" value="gosto">Gosto e me dou bem</label>
+                <label><input type="radio" name="equipe" value="depende">Depende da situação</label>
+                <label><input type="radio" name="equipe" value="prefiro-solo">Prefiro trabalhar sozinho</label>
+
+                <br />
+
+                <p>7. Você se considera uma pessoa detalhista?</p>
+                <label><input type="radio" name="detalhista" value="sim">Sim, muito</label>
+                <label><input type="radio" name="detalhista" value="as-vezes">Às vezes</label>
+                <label><input type="radio" name="detalhista" value="não">Não, prefiro olhar o panorama geral</label>
+
+                <br />
+
+                <p>8. Como você lida com pressão e prazos apertados?</p>
+                <label><input type="radio" name="pressao" value="bem">Bem, costumo manter a calma</label>
+                <label><input type="radio" name="pressao" value="razoavel">Razoavelmente bem</label>
+                <label><input type="radio" name="pressao" value="mal">Mal, fico estressado facilmente</label>
+
+                <br />
+
+                <p>9. O que você acha mais importante em um projeto?</p>
+                <label><input type="radio" name="importancia" value="funcionalidade">Funcionalidade</label>
+                <label><input type="radio" name="importancia" value="inovacao">Inovação</label>
+                <label><input type="radio" name="importancia" value="seguranca">Segurança</label>
+
+                <br />
+
+                <p>10. Qual sua preferência em relação a atividades práticas?</p>
+                <label><input type="radio" name="praticas" value="gosto">Gosto, prefiro aprender fazendo</label>
+                <label><input type="radio" name="praticas" value="as-vezes">Às vezes, depende da situação</label>
+                <label><input type="radio" name="praticas" value="não-gosto">Não gosto, prefiro teoria</label>
+
+                <br />
+
+                <button type="button" onclick="avaliarResultado()">Ver resultado</button>
+                <div id="loader" class="loader" style="display: none;"></div>
+            </form>
+
+            <div id="resultado">
+                <h2>Resultado:</h2>
+                <p id="engenharia"></p>
+                <p id="texto-resultado"></p>
+            </div>
+        </main>
+    </div>
+
+    <script defer src="seuarquivo.js"></script>
+    <script>
+        function avaliarResultado() {
+            const loader = document.getElementById("loader");
+            const questionario = document.getElementById("questionario");
+            const resultado = document.getElementById("resultado");
+            const habilidade = document.querySelector('input[name="habilidade"]:checked');
+            const gosto = document.querySelector('input[name="gosto"]:checked');
+            const area = document.querySelector('input[name="area"]:checked');
+            const tecnologia = document.querySelector('input[name="tecnologia"]:checked');
+            const maquinas = document.querySelector('input[name="maquinas"]:checked');
+            const equipe = document.querySelector('input[name="equipe"]:checked');
+            const detalhista = document.querySelector('input[name="detalhista"]:checked');
+            const pressao = document.querySelector('input[name="pressao"]:checked');
+            const importancia = document.querySelector('input[name="importancia"]:checked');
+            const praticas = document.querySelector('input[name="praticas"]:checked');
+
+            if (habilidade && gosto && area && tecnologia && maquinas && equipe && detalhista && pressao && importancia && praticas) {
+                loader.style.display = "block"; // Mostrar o loader
+
+                setTimeout(() => {
+                    let engenharia;
+                    let textoResultado;
+
+                    // Lógica para determinar a engenharia com base nas respostas
+                    if (habilidade.value === "analise" && gosto.value === "resolver-problemas" && tecnologia.value === "apaixonado" && equipe.value === "gosto") {
+                        engenharia = "Engenharia de Computação";
+                        textoResultado = "Você se encaixa no perfil de quem gosta de análise, resolver problemas, é apaixonado por tecnologia e gosta de trabalhar em equipe. Portanto, recomendamos a área de Engenharia de Computação para você!";
+                    } else if (habilidade.value === "criatividade" && gosto.value === "inovar" && tecnologia.value === "apaixonado" && equipe.value === "gosto") {
+                        engenharia = "Engenharia de Computação";
+                        textoResultado = "Você se encaixa no perfil de quem tem habilidade criativa, gosta de inovar, é apaixonado por tecnologia e gosta de trabalhar em equipe. Portanto, recomendamos a área de Engenharia de Computação para você!";
+                    } else if (habilidade.value === "trabalho-manual" && gosto.value === "construir" && area.value === "civil" && detalhista.value === "sim") {
+                        engenharia = "Engenharia Civil";
+                        textoResultado = "Você se encaixa no perfil de quem gosta de trabalhos manuais, construir e é detalhista. Portanto, recomendamos a área de Engenharia Civil para você!";
+                    } else if (habilidade.value === "trabalho-manual" && gosto.value === "construir" && area.value === "mecanica" && maquinas.value === "sim" && detalhista.value === "sim") {
+                        engenharia = "Engenharia Mecânica";
+                        textoResultado = "Você se encaixa no perfil de quem gosta de trabalhos manuais, construir, é detalhista e se sente confortável com máquinas e equipamentos. Portanto, recomendamos a área de Engenharia Mecânica para você!";
+                    } else if (tecnologia.value === "apaixonado" && pressao.value === "bem" && importancia.value === "inovacao") {
+                        engenharia = "Engenharia de Computação";
+                        textoResultado = "Você se considera apaixonado por tecnologia, lida bem com pressão e prazos apertados e valoriza a inovação em projetos. Portanto, recomendamos a área de Engenharia de Computação para você!";
+                    } else {
+                        engenharia = "Automação";
+                        textoResultado = "Com base nas suas respostas, sugerimos a área de Automação para você.";
+                    }
+
+                    // Exibir o resultado e texto explicativo no início da página
+                    document.getElementById("engenharia").innerText = engenharia;
+                    document.getElementById("texto-resultado").innerText = textoResultado;
+
+                    // Esconder o loader
+                    loader.style.display = "none";
+                    // Esconder o questionário
+                    questionario.style.display = "none";
+                    // Exibir o resultado
+                    resultado.style.display = "block";
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                }, 6000); // Tempo de espera de 6 segundos (para simular o carregamento)
+            } else {
+                alert("Por favor, responda todas as perguntas.");
+            }
+        }
+    </script>
+</body>
+</html>
