@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+pfEXt0LPvWS0SKn+06DxEBnZ9mk5t/bWlwEchYBADod1aZXUIjGEbztwbcidZsLFamCURi0QuUUo71nxkVuRw==",
+  "dgSpecHash": "1W2TajwCd4ISIrx9OIHI+3FX4lB7HVP2t+UwXI6mSWFS3BeaWyX84/adkzFppQIHwtMP+abZAsG5c6qeKvLxcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\camil\\OneDrive\\Documentos\\EngWeb\\Site\\EngWeb.csproj",
+  "projectFilePath": "C:\\Users\\camil\\OneDrive\\Área de Trabalho\\TrabalhoCorreto\\Site2\\EngWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\camil\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\camil\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -82,16 +82,16 @@
                 <h1>EngWeb</h1>
             </div>
             <ul class="nav-list">
-                <li><a href="http://localhost:5268">Home </a></li>
+                <li><a href="https://localhost:7238">Home </a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Áreas <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="http://localhost:5268/Pages/Automacao.html">Automação</a>
-                        <a href="http://localhost:5268/Pages/Civil.html">Civil</a>
-                        <a href="http://localhost:5268/Pages/Computacao.html">Computação</a>
+                        <a href="https://localhost:7238/Pages/Automacao.html">Automação</a>
+                        <a href="https://localhost:7238/Pages/Civil.html">Civil</a>
+                        <a href="https://localhost:7238/Pages/Computacao.html">Computação</a>
                     </div>
                 </li>
-                <li><a href="http://localhost:5268/Login">Cadastro</a></li>
+                <li><a href="https://localhost:7238/Login">Cadastro</a></li>
             </ul>
         </div>
     </header>
@@ -179,7 +179,7 @@
             </form>
 
             <div id="resultado">
-                <h2>Resultado:</h2>
+                <h2>Resultado:{{engenharia}}</h2>
                 <p id="engenharia"></p>
                 <p id="texto-resultado"></p>
             </div>
@@ -209,38 +209,63 @@
                 setTimeout(() => {
                     let engenharia;
                     let textoResultado;
+                    let imagemSrc;
 
                     // Lógica para determinar a engenharia com base nas respostas
                     if (habilidade.value === "analise" && gosto.value === "resolver-problemas" && tecnologia.value === "apaixonado" && equipe.value === "gosto") {
                         engenharia = "Engenharia de Computação";
-                        textoResultado = "Você se encaixa no perfil de quem gosta de análise, resolver problemas, é apaixonado por tecnologia e gosta de trabalhar em equipe. Portanto, recomendamos a área de Engenharia de Computação para você!";
+                        imagemSrc = "/Imagem/computacao_res.jpg";
+                        textoResultado = `Com base nas suas respostas, recomendamos a área de ${engenharia} para você. Você demonstra habilidade analítica, gosta de resolver problemas, é apaixonado por tecnologia e prefere trabalhar em equipe. Agradecemos sinceramente por dedicar seu tempo para realizar nosso questionário. Desejamos-lhe boa sorte em sua jornada profissional e esperamos que nossos conteúdos tenham contribuído de forma significativa para sua decisão.`;
                     } else if (habilidade.value === "criatividade" && gosto.value === "inovar" && tecnologia.value === "apaixonado" && equipe.value === "gosto") {
                         engenharia = "Engenharia de Computação";
-                        textoResultado = "Você se encaixa no perfil de quem tem habilidade criativa, gosta de inovar, é apaixonado por tecnologia e gosta de trabalhar em equipe. Portanto, recomendamos a área de Engenharia de Computação para você!";
+                        imagemSrc = "/Imagem/computacao_res.jpg";
+                        textoResultado = `Com base nas suas respostas, recomendamos a área de ${engenharia} para você. Você demonstra habilidade criativa, gosta de inovar, é apaixonado por tecnologia e prefere trabalhar em equipe. Agradecemos sinceramente por dedicar seu tempo para realizar nosso questionário. Desejamos-lhe boa sorte em sua jornada profissional e esperamos que nossos conteúdos tenham contribuído de forma significativa para sua decisão.`;
                     } else if (habilidade.value === "trabalho-manual" && gosto.value === "construir" && area.value === "civil" && detalhista.value === "sim") {
                         engenharia = "Engenharia Civil";
-                        textoResultado = "Você se encaixa no perfil de quem gosta de trabalhos manuais, construir e é detalhista. Portanto, recomendamos a área de Engenharia Civil para você!";
+                        imagemSrc = "/Imagem/civil_res.jpg";
+                        textoResultado = `Com base nas suas respostas, recomendamos a área de ${engenharia} para você. Você demonstra interesse em trabalhos manuais, construção e é detalhista. Agradecemos sinceramente por dedicar seu tempo para realizar nosso questionário. Desejamos-lhe boa sorte em sua jornada profissional e esperamos que nossos conteúdos tenham contribuído de forma significativa para sua decisão.`;
                     } else if (habilidade.value === "trabalho-manual" && gosto.value === "construir" && area.value === "mecanica" && maquinas.value === "sim" && detalhista.value === "sim") {
                         engenharia = "Engenharia Mecânica";
-                        textoResultado = "Você se encaixa no perfil de quem gosta de trabalhos manuais, construir, é detalhista e se sente confortável com máquinas e equipamentos. Portanto, recomendamos a área de Engenharia Mecânica para você!";
+                        imagemSrc = "/Imagem/mecanica_res.jpg";
+                        textoResultado = `Com base nas suas respostas, recomendamos a área de ${engenharia} para você. Você demonstra interesse em trabalhos manuais, construção, é detalhista e se sente confortável com máquinas e equipamentos. Agradecemos sinceramente por dedicar seu tempo para realizar nosso questionário. Desejamos-lhe boa sorte em sua jornada profissional e esperamos que nossos conteúdos tenham contribuído de forma significativa para sua decisão.`;
                     } else if (tecnologia.value === "apaixonado" && pressao.value === "bem" && importancia.value === "inovacao") {
                         engenharia = "Engenharia de Computação";
-                        textoResultado = "Você se considera apaixonado por tecnologia, lida bem com pressão e prazos apertados e valoriza a inovação em projetos. Portanto, recomendamos a área de Engenharia de Computação para você!";
+                        imagemSrc = "/Imagem/computacao_res.jpg";
+                        textoResultado = `Com base nas suas respostas, recomendamos a área de ${engenharia} para você. Você demonstra paixão por tecnologia, lida bem com pressão e prazos apertados, e valoriza a inovação em projetos. Agradecemos sinceramente por dedicar seu tempo para realizar nosso questionário. Desejamos-lhe boa sorte em sua jornada profissional e esperamos que nossos conteúdos tenham contribuído de forma significativa para sua decisão.`;
                     } else {
                         engenharia = "Automação";
-                        textoResultado = "Com base nas suas respostas, sugerimos a área de Automação para você.";
+                        imagemSrc = "/Imagem/automacao_res.jpg";
+                        textoResultado = `Com base nas suas respostas, sugerimos a área de Automação para você. Agradecemos sinceramente por dedicar seu tempo para realizar nosso questionário. Desejamos-lhe boa sorte em sua jornada profissional e esperamos que nossos conteúdos tenham contribuído de forma significativa para sua decisão.`;
                     }
 
-                    // Exibir o resultado e texto explicativo no início da página
-                    document.getElementById("engenharia").innerText = engenharia;
-                    document.getElementById("texto-resultado").innerText = textoResultado;
+                    const imagem = document.createElement("img");
+                    imagem.src = imagemSrc;
+                    imagem.alt = "Imagem Resultado";
+                    imagem.style.width = "100%";
+                    imagem.style.height = "35rem";
+
+                    // Adicionar imagem antes do texto de resultado
+                    resultado.appendChild(imagem);
+
+                    // Criar elemento de parágrafo para o texto de resultado
+                    const paragrafo = document.createElement("p");
+                    paragrafo.textContent = textoResultado;
+
+                    // Adicionar parágrafo após a imagem
+                    resultado.appendChild(paragrafo);
+
+                    // Exibir o resultado
+                    resultado.style.display = "block";
+
+                    // Atualizar o nome do curso no elemento h2
+                    document.getElementById("resultado").querySelector("h2").textContent = `Resultado: ${engenharia}`;
 
                     // Esconder o loader
                     loader.style.display = "none";
+
                     // Esconder o questionário
                     questionario.style.display = "none";
-                    // Exibir o resultado
-                    resultado.style.display = "block";
+
                     // Scroll to top
                     window.scrollTo(0, 0);
                 }, 6000); // Tempo de espera de 6 segundos (para simular o carregamento)

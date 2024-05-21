@@ -16,7 +16,7 @@ namespace Site2.Controllers
         public ActionResult Index()
         {
             return View();
-            //return View("http://localhost:5268/Pages/HomePage.html");
+            //return View("https://localhost:7238/Pages/HomePage.html");
         }
 
         public IActionResult Privacy()
